@@ -7,3 +7,4 @@ FROM python:3.8-slim
 WORKDIR /code
 
 CMD [ "python", "./app.py" ]
+EXPOSE 5000/tcp
