@@ -1,10 +1,6 @@
-FROM python:3.8 AS builder
-COPY requirements.txt .
-
-RUN pip install --user -r requirements.txt
-
-FROM python:3.8-slim
-WORKDIR /code
-
+FROM python:3.8
+WORKDIR /app
+COPY . /app
+RUN pip install -r requirements.txt
 CMD [ "python", "./app.py" ]
 EXPOSE 5000/tcp
